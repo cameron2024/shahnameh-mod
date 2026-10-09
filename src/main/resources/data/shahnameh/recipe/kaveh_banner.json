@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": "minecraft:leather",
+    "D": "minecraft:diamond",
+    "G": "minecraft:gold_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "LDL",
+    "LGL",
+    " S "
+  ],
+  "result": {
+    "id": "shahnameh:kaveh_banner"
+  }
+}

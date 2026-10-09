@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": "shahnameh:div_horn",
+    "B": "minecraft:iron_block",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "HBH",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "id": "shahnameh:ox_mace"
+  }
+}

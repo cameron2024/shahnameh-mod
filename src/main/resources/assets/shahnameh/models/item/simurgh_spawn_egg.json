@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "shahnameh:item/simurgh_spawn_egg"
+  }
+}
