@@ -29,7 +29,7 @@ public class MythSpawnEggItem extends Item {
             return InteractionResult.SUCCESS;
         }
         BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
-        Entity entity = this.type.get().create(level, EntitySpawnReason.SPAWN_EGG);
+        Entity entity = this.type.get().create(level, EntitySpawnReason.MOB_SUMMONED);
         if (entity == null) {
             return InteractionResult.FAIL;
         }

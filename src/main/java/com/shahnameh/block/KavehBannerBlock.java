@@ -46,7 +46,7 @@ public class KavehBannerBlock extends Block {
     protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         AABB area = new AABB(pos).inflate(RADIUS);
         boolean rallied = false;
-        for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, area, e -> e.isAlive() && e.getType().is(ModTags.BANNER_ALLIES))) {
+        for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, area, e -> e.isAlive() && ModTags.isIn(e, ModTags.BANNER_ALLIES))) {
             entity.addEffect(new MobEffectInstance(MobEffects.STRENGTH, PULSE_TICKS + 60, 0, true, true));
             entity.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, PULSE_TICKS + 60, 0, true, true));
             rallied = true;

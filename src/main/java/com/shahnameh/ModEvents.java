@@ -65,7 +65,7 @@ public final class ModEvents {
             if (weapon.is(ModItems.OX_MACE.get())) {
                 victim.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 50, 3));
                 victim.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 50, 1));
-                if (victim.getType().is(ModTags.DIVS)) {
+                if (ModTags.isIn(victim, ModTags.DIVS)) {
                     event.setAmount(event.getAmount() * 1.5F);
                 }
                 wearDown(attacker, weapon);

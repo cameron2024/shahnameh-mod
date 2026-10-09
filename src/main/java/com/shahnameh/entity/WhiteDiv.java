@@ -98,9 +98,13 @@ public class WhiteDiv extends Monster {
         level.sendParticles(ParticleTypes.CLOUD, this.getX(), this.getY() + 0.2, this.getZ(), 40, 3.0, 0.2, 3.0, 0.05);
         level.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.IRON_GOLEM_ATTACK, SoundSource.HOSTILE, 2.0F, 0.5F);
         for (LivingEntity victim : level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(5.0, 2.0, 5.0),
-                e -> e != this && e.isAlive() && !e.getType().is(ModTags.DIVS))) {
+                e -> e != this && e.isAlive() && !ModTags.isIn(e, ModTags.DIVS))) {
             victim.hurtServer(level, this.damageSources().mobAttack(this), 10.0F);
-            victim.knockback(1.6, this.getX() - victim.getX(), this.getZ() - victim.getZ());
+            double dx = victim.getX() - this.getX();
+            double dz = victim.getZ() - this.getZ();
+            double length = Math.max(0.1, Math.sqrt(dx * dx + dz * dz));
+            victim.push(dx / length * 1.6, 0.6, dz / length * 1.6);
+            victim.hurtMarked = true;
         }
     }
 
